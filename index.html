@@ -9,26 +9,89 @@
 <body>
     <h1>Will You Be My Valentine?</h1>
     <div class="begging">
-        <h3>Click "Yes" please</h3>
-       <img src="images/10.png" alt="please" class="please"> 
+        <h3 id="plea-text">Click "Yes" please</h3>
+       <img src="images/10.png" alt="please" class="please" id="plea-image"> 
     </div>
     <div class="yesnobtn">
         <div>
             <img src="images/5.png" alt="happycat" class="happycat">
             <img src="images/12.png" alt="leftarrow" class="leftarrow">
-            <button class="yesbtn">Yes</button>
+            <button class="yesbtn" id="yes-btn">Yes</button>
         </div>
         
         <div>
             <img src="images/1.png" alt="brokencat" class="brokencat">
             <img src="images/11.png" alt="rightarrow" class="rightarrow">
-            <button class="nobtn">No</button>
+            <button class="nobtn" id="no-btn">No</button>
         </div>
         
     </div>
 
-    
-    
+    <script>
+        const noBtn = document.getElementById("no-btn");
+        const yesBtn = document.getElementById("yes-btn");
+        const pleaText = document.getElementById("plea-text");
+        const pleaImage = document.getElementById("plea-image");
+
+        const messages = [
+            "Please say yes",
+            "yesssss",
+            "ouch sakit",
+            "mamabear please",
+            "pleaseeeeee",
+            "im begging you",
+            "yes ang click po"
+        ];
+
+        const images = [
+            "images/10.png",
+            "images/9.png",
+            "images/1.png",
+            "images/7.png",
+            "images/6.png",
+            "images/2.png"
+        ];
+
+        let clickCount = 0;
+
+        function moveNoButton() {
+            const padding = 16;
+            const rect = noBtn.getBoundingClientRect();
+            const maxX = Math.max(padding, window.innerWidth - rect.width - padding);
+            const maxY = Math.max(padding, window.innerHeight - rect.height - padding);
+            const x = Math.floor(Math.random() * (maxX - padding + 1)) + padding;
+            const y = Math.floor(Math.random() * (maxY - padding + 1)) + padding;
+
+            noBtn.style.position = "fixed";
+            noBtn.style.left = `${x}px`;
+            noBtn.style.top = `${y}px`;
+            noBtn.style.zIndex = "10";
+        }
+
+        function updatePlea() {
+            const message = messages[clickCount % messages.length];
+            const image = images[clickCount % images.length];
+            pleaText.textContent = message;
+            pleaImage.src = image;
+            clickCount += 1;
+        }
+
+        noBtn.addEventListener("click", (event) => {
+            event.preventDefault();
+            moveNoButton();
+            updatePlea();
+        });
+
+        yesBtn.addEventListener("click", () => {
+            window.location.href = "yesclicked.html";
+        });
+
+        window.addEventListener("resize", () => {
+            if (noBtn.style.position === "fixed") {
+                moveNoButton();
+            }
+        });
+    </script>
 
 </body>
 </html>

@@ -9,7 +9,7 @@ body{
 
 h1 {
     font-size: clamp(1.8rem, 6vw, 3rem);
-    margin-top: clamp(10px, 18vh, 80px);
+    margin-top: clamp(10px, 18vh, 10px);
     color: #000000;
 }
 
@@ -101,6 +101,27 @@ h3 {
     height: clamp(100px, 24vw, 200px);
     width: auto;
     display: block;
+    position: relative;
+    margin: 0 auto;
+}
+
+.flowers {
+    height: clamp(100px, 24vw, 200px);
+    width: auto;
+    display: block;
+    position: relative;
+    margin: 0 auto;
+}
+p {
+    font-size: clamp(1rem, 4vw, 1rem);
+    margin-top: clamp(12px, 6vh, 80px);
+    color: #000000;
+}
+
+.heart{
+    height: clamp(100px, 24vw, 200px);
+    width: auto;
+    justify-content: space-between;
     position: relative;
     margin: 0 auto;
 }
