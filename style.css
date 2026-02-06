@@ -9,7 +9,13 @@ body{
 
 h1 {
     font-size: clamp(1.8rem, 6vw, 3rem);
-    margin-top: clamp(24px, 18vh, 140px);
+    margin-top: clamp(10px, 18vh, 140px);
+    color: #000000;
+}
+
+h3 {
+    font-size: clamp(1.2rem, 4vw, 1.8rem);
+    margin-top: clamp(12px, 6vh, 80px);
     color: #000000;
 }
 
@@ -65,7 +71,7 @@ h1 {
 }
 
 .rightarrow {
-    transform: rotate(280deg);
+    transform: rotate(270deg);
     font-size: clamp(2rem, 8vw, 4rem);
     height: clamp(36px, 10vw, 70px);
     width: auto;
@@ -74,13 +80,27 @@ h1 {
 }
 
 .happycat {
-    height: clamp(46px, 14vw, 70px);
-    width: clamp(46px, 14vw, 70px);
+    height: clamp(54px, 16vw, 86px);
+    width: clamp(54px, 16vw, 86px);
     display: block;
 }
 
 .brokencat{
-    height: clamp(46px, 14vw, 80px);
-    width: clamp(46px, 14vw, 70px);
+    height: clamp(54px, 16vw, 96px);
+    width: clamp(54px, 16vw, 86px);
     display: block;
+}
+
+.begging {
+    margin-top: clamp(12px, 6vh, 80px);
+    position: relative;
+    text-align: center;
+}
+
+.please{
+    height: clamp(100px, 24vw, 200px);
+    width: auto;
+    display: block;
+    position: relative;
+    margin: 0 auto;
 }
